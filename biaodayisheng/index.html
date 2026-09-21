@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="表达一生挚爱的句子大全，收录深情告白、经典语录与情感文案，帮助您在重要时刻传递永恒的爱意与承诺。">
+    <meta name="keywords" content="表达一生挚爱的句子, 永恒的爱语录, 深情告白文案, 爱情誓言, 情感语录">
+    <title>表达一生挚爱的句子-永恒深情告白与爱情语录精选</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --primary-hover: #b02a6c;
+            --secondary-color: #f8f9fa;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --bg-body: #ffffff;
+            --bg-card: #fff0f6;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(214, 51, 132, 0.12);
+            --font-serif: "Songti SC", "SimSun", "Times New Roman", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: var(--font-serif);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            background: linear-gradient(180deg, #fff0f6 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-family: var(--font-serif);
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Quote Card Grid */
+        .quote-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .quote-card {
+            background: white;
+            border: 1px solid rgba(214, 51, 132, 0.1);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            margin-bottom: 15px;
+            font-family: var(--font-serif);
+        }
+
+        .quote-text {
+            font-size: 1.25rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Category Section */
+        .category-section {
+            background-color: var(--secondary-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-family: var(--font-serif);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: white;
+            border: 1px solid #e9ecef;
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .category-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Advice Section */
+        .advice-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .advice-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .advice-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .advice-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8f9fa;
+            padding: 50px 0 30px;
+            border-top: 1px solid #e9ecef;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: #adb5bd;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .quote-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">挚爱语录</div>
+            <nav class="nav-links">
+                <a href="#all">全部语录</a>
+                <a href="#short">短句</a>
+                <a href="#poetic">诗意</a>
+                <a href="#advice">告白指南</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>表达一生挚爱的句子</h1>
+                <p>爱是世间最恒久的语言。无论岁月如何变迁，有些话语依然能直抵人心，见证我们最深沉的情感。</p>
+                <a href="#all" class="cta-button">浏览精选语录</a>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section id="all" class="section-padding">
+            <div class="container">
+                <div class="quote-grid">
+                    <!-- Card 1 -->
+                    <article class="quote-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">一生所求，不过是温暖相伴。我愿用余生的时光，为你抵挡岁月的风霜。</p>
+                        <div class="quote-author">—— 深情告白</div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="quote-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">遇见你之前，我没想过结婚；遇见你之后，结婚这事我没想过别人。</p>
+                        <div class="quote-author">—— 钱钟书（改编）</div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="quote-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">世界那么大，遇见你不容易；余生那么长，只想和你在一起。</p>
+                        <div class="quote-author">—— 经典情话</div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="quote-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">因为你，我愿意成为一个更好的人，不想成为你的包袱，因此发奋努力，只是为了想要证明我足以与你相配。</p>
+                        <div class="quote-author">——《侧耳倾听》</div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="quote-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">我爱你，不光因为你的样子，还因为和你在一起时，我的样子。</p>
+                        <div class="quote-author">—— 罗伊·克罗夫特</div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="quote-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">你是我的乍见之欢，也是我的久处不厌。这一生，我只为你一人倾心。</p>
+                        <div class="quote-author">—— 现代散文</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorized Section -->
+        <section id="short" class="section-padding category-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>按风格分类</h2>
+                    <p>选择最适合当下的表达方式</p>
+                </div>
+
+                <div class="category-tabs">
+                    <button class="tab-btn active" onclick="switchTab('short')">简短有力</button>
+                    <button class="tab-btn" onclick="switchTab('poetic')">唯美诗意</button>
+                    <button class="tab-btn" onclick="switchTab('promise')">一生承诺</button>
+                </div>
+
+                <!-- Short Tab Content -->
+                <div id="short" class="category-content active">
+                    <div class="quote-grid">
+                        <article class="quote-card">
+                            <p class="quote-text">一生只够爱一个人。</p>
+                            <div class="quote-author">—— 经典</div>
+                        </article>
+                        <article class="quote-card">
+                            <p class="quote-text">你是我唯一的信仰。</p>
+                            <div class="quote-author">—— 爱情誓言</div>
+                        </article>
+                        <article class="quote-card">
+                            <p class="quote-text">往后余生，风雪是你。</p>
+                            <div class="quote-author">—— 网络热词</div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Poetic Tab Content -->
+                <div id="poetic" class="category-content">
+                    <div class="quote-grid">
+                        <article class="quote-card">
+                            <p class="quote-text">我行过许多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。</p>
+                            <div class="quote-author">—— 沈从文</div>
+                        </article>
+                        <article class="quote-card">
+                            <p class="quote-text">我见青山多妩媚，料青山见我应如是。</p>
+                            <div class="quote-author">—— 辛弃疾</div>
+                        </article>
+                        <article class="quote-card">
+                            <p class="quote-text">愿有岁月可回首，且以深情共白头。</p>
+                            <div class="quote-author">—— 古风</div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Promise Tab Content -->
+                <div id="promise" class="category-content">
+                    <div class="quote-grid">
+                        <article class="quote-card">
+                            <p class="quote-text">我承诺，无论顺境逆境，富贵贫穷，我都会紧紧握住你的手，陪你走过这一生。</p>
+                            <div class="quote-author">—— 婚礼誓词</div>
+                        </article>
+                        <article class="quote-card">
+                            <p class="quote-text">在未来的日子里，我愿意成为你的避风港，做你最坚实的后盾。</p>
+                            <div class="quote-author">—— 深情承诺</div>
+                        </article>
+                        <article class="quote-card">
+                            <p class="quote-text">我会用我的生命去守护这份爱，直到时间的尽头。</p>
+                            <div class="quote-author">—— 终极誓言</div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advice Section -->
+        <section id="advice" class="section-padding">
+            <div class="container">
+                <div class="advice-card">
+                    <h3>如何真诚地表达一生挚爱？</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-muted);">文字虽美，但真诚的心意才是最打动人的力量。以下是一些实用的建议：</p>
+                    <ul class="advice-list">
+                        <li><strong>结合具体细节：</strong> 提及对方让你感动的瞬间，而非泛泛而谈。</li>
+                        <li><strong>表达改变与成长：</strong> 说明对方如何让你成为了一个更好的人。</li>
+                        <li><strong>承诺未来：</strong> “一生”二字沉重而美好，结合对未来的规划会更有说服力。</li>
+                        <li><strong>保持谦逊与尊重：</strong> 爱是尊重与理解，用词应温暖而不傲慢。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">挚爱语录</div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">投稿建议</a>
+                <a href="#">免责声明</a>
+            </div>
+            <p class="copyright">© 2023 挚爱语录网. 保留所有权利. 所有语录版权归原作者或平台所有.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.category-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected content
+            document.getElementById(tabId).classList.add('active');
+
+            // Activate clicked button (find button by onclick attribute for simplicity in this demo)
+            const clickedBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(tabId));
+            if(clickedBtn) {
+                clickedBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
