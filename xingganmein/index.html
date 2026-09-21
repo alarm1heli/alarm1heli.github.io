@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="性感美女护士专题：展现职业风采与独特魅力的精选内容，包括职业形象展示、健康护理科普及互动社区讨论。">
+    <meta name="keywords" content="性感美女护士,护士形象,职业风采,健康护理">
+    <title>性感美女护士-职业风采与健康护理专题展示</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #f8bbd0;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-body: #f9f9f9;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            background-color: #d81b60;
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layout */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card Design */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #fce4ec;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                护士风采
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">精选图集</a>
+                <a href="#">职业形象</a>
+                <a href="#">健康资讯</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>展现职业风采，守护生命之光</h1>
+                <p>探索护士这一神圣职业背后的独特魅力。我们致力于展示医护人员的专业形象、奉献精神以及在抗疫一线的感人瞬间。</p>
+                <a href="#gallery" class="hero-btn">浏览精选图集</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门主题展示</h2>
+                <a href="#" class="view-all">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/nurse1/400/300" alt="护士形象展示" class="card-image">
+                        <span class="card-badge">精选</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">职业形象</span>
+                        <h3 class="card-title">现代护士的优雅穿搭与职业素养</h3>
+                        <p class="card-excerpt">探讨如何在工作环境中保持整洁、专业且不失亲和力的形象，展现护士的自信与干练。</p>
+                        <div class="card-meta">
+                            <span>阅读: 1.2w</span>
+                            <span>2023-10-24</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/nurse2/400/300" alt="医院场景" class="card-image">
+                        <span class="card-badge">热门</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">工作日常</span>
+                        <h3 class="card-title">白大褂下的汗水：一线护士的坚守</h3>
+                        <p class="card-excerpt">记录医护人员在繁忙医院中的真实工作状态，展现他们背后的辛勤付出与人文关怀。</p>
+                        <div class="card-meta">
+                            <span>阅读: 8.5k</span>
+                            <span>2023-10-22</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/nurse3/400/300" alt="护理技能" class="card-image">
+                        <span class="card-badge">科普</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">健康护理</span>
+                        <h3 class="card-title">专业护理技巧与患者沟通艺术</h3>
+                        <p class="card-excerpt">分享护士在临床工作中积累的宝贵经验，提升护理服务质量，改善患者就医体验。</p>
+                        <div class="card-meta">
+                            <span>阅读: 6.3k</span>
+                            <span>2023-10-20</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">护理知识科普</h2>
+            </div>
+            
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-content">
+                        <span class="card-category">急救知识</span>
+                        <h3 class="card-title">心肺复苏（CPR）操作指南</h3>
+                        <p class="card-excerpt">学习关键时刻能救命的急救技能，了解正确的按压频率和深度。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-content">
+                        <span class="card-category">心理健康</span>
+                        <h3 class="card-title">护士职业倦怠的预防与调节</h3>
+                        <p class="card-excerpt">关注医护人员的内心世界，提供科学的心理疏导方法和自我调节技巧。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-content">
+                        <span class="card-category">日常防护</span>
+                        <h3 class="card-title">医护人员标准防护流程详解</h3>
+                        <p class="card-excerpt">详解如何正确穿戴防护用品，保障自身安全，有效阻断交叉感染。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container" style="background-color: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow);">
+            <div class="section-header" style="margin-bottom: 20px;">
+                <h2 class="section-title">关于栏目</h2>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.4rem;">尊重职业，传递正能量</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">
+                        本栏目旨在客观、正面地展现护士群体的职业形象。我们拒绝低俗化、物化内容的传播，专注于通过图文、视频等形式，弘扬南丁格尔精神，展示医护人员在救死扶伤过程中的专业素养与人性光辉。
+                    </p>
+                    <p style="color: var(--text-light);">
+                        每一位在岗位上辛勤工作的护士，都是值得尊敬的守护者。我们希望通过这个平台，让更多人了解护士工作的艰辛与伟大，增进社会对医护人员的理解与支持。
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div style="background: #fce4ec; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">24/7</div>
+                        <div style="font-size: 0.9rem; color: var(--text-light);">全天候服务</div>
+                    </div>
+                    <div style="background: #fce4ec; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">100%</div>
+                        <div style="font-size: 0.9rem; color: var(--text-light);">真实素材</div>
+                    </div>
+                    <div style="background: #fce4ec; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">专业</div>
+                        <div style="font-size: 0.9rem; color: var(--text-light);">内容审核</div>
+                    </div>
+                    <div style="background: #fce4ec; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">互动</div>
+                        <div style="font-size: 0.9rem; color: var(--text-light);">社区交流</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>护士风采</h4>
+                    <p style="color: #bbb; font-size: 0.9rem; line-height: 1.8;">
+                        致力于打造最专业的医护人员形象展示平台，弘扬职业精神，传递健康理念。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">客服邮箱: support@example.com</a></li>
+                        <li><a href="#">商务合作: business@example.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 护士风采展示平台 版权所有.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
