@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="海加尔山守护者 - 探索魔兽世界经典战役、守护者传说、阿格拉玛与玛法里奥的英雄史诗，以及守护者们的装备与能力解析。">
+    <meta name="keywords" content="海加尔山守护者, 魔兽世界, 玛法里奥, 阿格拉玛, 阿克蒙德, 天崩地裂, 艾泽拉斯守护者">
+    <title>海加尔山守护者 - 魔兽世界经典战役与英雄史诗</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-gold: #c69c6d;
+            --accent-red: #8b0000;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f4f4;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/azeroth/1920/800');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #eee;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+            font-weight: bold;
+            border-radius: 4px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e0b885;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-gold);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 0.8rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: var(--accent-red); }
+        .rank-list li:nth-child(2) .rank-num { background: #8b4513; }
+        .rank-list li:nth-child(3) .rank-num { background: #cd7f32; }
+
+        .rank-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Timeline / Story */
+        .story-timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #ddd;
+        }
+
+        .story-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .story-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--bg-card);
+            border: 3px solid var(--accent-gold);
+            border-radius: 50%;
+        }
+
+        .story-date {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .story-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #999;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <span>⚔️</span> 海加尔山守护者
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">历史战役</a></li>
+                    <li><a href="#">守护者谱系</a></li>
+                    <li><a href="#">装备图鉴</a></li>
+                    <li><a href="#">新手指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>天崩地裂前的誓言</h1>
+                <p>重温艾泽拉斯历史上最惨烈的一战。海加尔山守护者们以凡人之躯，对抗燃烧军团的毁灭意志，守护世界的最后希望。</p>
+                <a href="#history" class="btn">探索战役全史</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Content -->
+                <div class="main-content">
+                    <!-- History Section -->
+                    <section id="history">
+                        <div class="section-title">
+                            <h2>天崩地裂：战役回顾</h2>
+                            <a href="#">查看更多 &rarr;</a>
+                        </div>
+                        <div class="card-grid">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="https://picsum.photos/seed/malfurion/400/250" alt="玛法里奥">
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-tag">守护者</span>
+                                    <h3>泰达希尔之怒与觉醒</h3>
+                                    <p>玛法里奥与伊瑟拉在达拉然废墟中苏醒，他们意识到燃烧军团即将降临，必须唤醒沉睡的德鲁伊，保卫海加尔山。</p>
+                                    <div class="card-meta">
+                                        <span>历史背景</span>
+                                        <span>2018-11-02</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="https://picsum.photos/seed/illidan/400/250" alt="伊利丹">
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-tag">关键人物</span>
+                                    <h3>伊利丹的背叛与救赎</h3>
+                                    <p>面对燃烧军团的入侵，伊利丹试图通过牺牲暗夜精灵来获取力量。但在海加尔山战役中，他的行动被证明是必要的。</p>
+                                    <div class="card-meta">
+                                        <span>人物分析</span>
+                                        <span>2018-11-03</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="https://picsum.photos/seed/archimonde/400/250" alt="阿克蒙德">
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-tag">最终BOSS</span>
+                                    <h3>阿克蒙德的降临</h3>
+                                    <p>毁灭之王的降临引发了海加尔山的崩塌。守护者们集结了所有的力量，试图阻止这不可阻挡的毁灭。</p>
+                                    <div class="card-meta">
+                                        <span>BOSS攻略</span>
+                                        <span>2018-11-05</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Timeline Section -->
+                    <section>
+                        <div class="section-title">
+                            <h2>战役时间线</h2>
+                        </div>
+                        <div class="story-timeline">
+                            <div class="story-item">
+                                <div class="story-date">第一纪元</div>
+                                <h3 class="story-title">萨格拉斯的堕落</h3>
+                                <p class="story-desc">萨格拉斯被伊利丹击败后，燃烧军团正式将目光投向了艾泽拉斯。阿克蒙德抵达外域，准备开启传送门。</p>
+                            </div>
+                            <div class="story-item">
+                                <div class="story-date">第二纪元</div>
+                                <h3 class="story-title">守护者的集结</h3>
+                                <p class="story-desc">玛法里奥与伊瑟拉在达拉然废墟中苏醒。他们意识到世界之树泰达希尔正受到威胁，必须唤醒沉睡的德鲁伊。</p>
+                            </div>
+                            <div class="story-item">
+                                <div class="story-date">第三纪元</div>
+                                <h3 class="story-title">天崩地裂</h3>
+                                <p class="story-desc">守护者们与燃烧军团展开激战。最终，泰兰德斩断世界之树，阻止了阿克蒙德的完全降临，但付出了惨痛代价。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Guide Section -->
+                    <section>
+                        <div class="section-title">
+                            <h2>新手守护者指南</h2>
+                        </div>
+                        <div class="card-grid">
+                            <article class="card">
+                                <div class="card-body">
+                                    <h3>守护者职责</h3>
+                                    <p>守护者不仅是战士，更是德鲁伊、圣骑士等职业的领袖。他们负责保护艾泽拉斯免受虚空与燃烧军团的侵蚀。</p>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card-body">
+                                    <h3>关键道具：世界之树</h3>
+                                    <p>世界之树是艾泽拉斯的生命之源。守护者们必须不惜一切代价保护它，因为一旦它被摧毁，世界将陷入黑暗。</p>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">守护者排行榜</h4>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num">1</span>
+                                <span class="rank-name">玛法里奥·怒风</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">2</span>
+                                <span class="rank-name">泰兰德·语风</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">3</span>
+                                <span class="rank-name">伊利丹·怒风</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <span class="rank-name">范达尔·鹿盔</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <span class="rank-name">艾瑞达·玛维</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">热门装备图鉴</h4>
+                        <div class="story-item">
+                            <h3 class="story-title" style="font-size: 1rem;">泰达希尔之冠</h3>
+                            <p class="story-desc">由世界之树精华锻造的守护者头饰。</p>
+                        </div>
+                        <div class="story-item">
+                            <h3 class="story-title" style="font-size: 1rem;">暗影之月</h3>
+                            <p class="story-desc">伊利丹遗留下来的传奇武器。</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">热门论坛话题</h4>
+                        <ul class="rank-list">
+                            <li><a href="#">海加尔山怀旧服攻略</a></li>
+                            <li><a href="#">守护者装备搭配推荐</a></li>
+                            <li><a href="#">关于伊利丹的争论</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于海加尔山守护者</h4>
+                    <p>本站致力于整理魔兽世界经典战役资料，还原艾泽拉斯守护者的光辉历史，为玩家提供详尽的战役回顾与角色解析。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">守护者谱系</a></li>
+                        <li><a href="#">历史战役</a></li>
+                        <li><a href="#">新手入门</a></li>
+                        <li><a href="#">装备图鉴</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">暴雪娱乐</a></li>
+                        <li><a href="#">魔兽世界官网</a></li>
+                        <li><a href="#">艾泽拉斯百科</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 海加尔山守护者资料站. All rights reserved. 非官方网站，内容仅供学习交流。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
