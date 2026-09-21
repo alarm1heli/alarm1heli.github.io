@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="真假姐妹 - 深度解析姐妹关系中的界限、情感与信任。提供真实故事分享、关系修复指南及心理学分析，帮助读者识别并处理复杂亲情羁绊。">
+    <meta name="keywords" content="真假姐妹, 姐妹关系, 亲情修复, 心理咨询, 姐妹冲突, 姐妹情谊">
+    <title>真假姐妹 - 姐妹关系深度解析与修复指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #d2b4de;
+            --accent-color: #e056fd;
+            --text-dark: #2c3e50;
+            --text-gray: #7f8c8d;
+            --bg-light: #fdfdfd;
+            --bg-off: #f4f6f7;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        /* Core Concepts */
+        .concepts {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .concept-card {
+            background: var(--bg-off);
+            padding: 30px;
+            border-radius: var(--radius);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-top-color: var(--primary-color);
+        }
+
+        .concept-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .concept-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .concept-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Stories Section */
+        .stories {
+            padding: 80px 0;
+            background: var(--bg-off);
+        }
+
+        .story-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .story-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .story-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(142, 68, 173, 0.1);
+            line-height: 1;
+            min-width: 40px;
+        }
+
+        .story-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .story-content p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .story-meta {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Diagnosis Section */
+        .diagnosis {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .diagnosis-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .diagnosis-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .diagnosis-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .diagnosis-list {
+            margin: 30px 0;
+        }
+
+        .diagnosis-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .diagnosis-list li strong {
+            color: var(--primary-color);
+            min-width: 20px;
+        }
+
+        .diagnosis-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: var(--bg-off);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .diagnosis-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>真假姐妹</span>指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#concepts" class="active">核心概念</a></li>
+                    <li><a href="#stories">真实故事</a></li>
+                    <li><a href="#diagnosis">识别特征</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">寻求帮助</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>真假姐妹：<br>如何识别与修复复杂的亲情羁绊</h1>
+                    <p>在成长的旅途中，有些姐妹是彼此的避风港，有些却可能成为隐形的竞争者。我们提供心理学视角的分析与实用建议，助你厘清关系，重获内心的平静。</p>
+                    <div class="hero-tags">
+                        <span class="tag">#情感修复</span>
+                        <span class="tag">#家庭心理学</span>
+                        <span class="tag">#边界建立</span>
+                        <span class="tag">#自我疗愈</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concepts -->
+        <section id="concepts" class="concepts">
+            <div class="container">
+                <h2 class="section-title">理解“真假姐妹”</h2>
+                <p class="section-desc">这不仅仅是一个标签，更是一种对家庭权力结构、情感依恋以及个体成长差异的深刻洞察。</p>
+                
+                <div class="concept-grid">
+                    <article class="concept-card">
+                        <span class="concept-icon">🛡️</span>
+                        <h3>真姐妹：安全基地</h3>
+                        <p>真正的姐妹关系建立在无条件的接纳之上。无论你在外遭遇何种挫折，她都是那个可以卸下伪装、分享脆弱的“安全基地”。这种关系通常伴随着长期的共同成长和相互支持。</p>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-icon">⚖️</span>
+                        <h3>假姐妹：竞争与依赖</h3>
+                        <p>虚假的姐妹关系往往掺杂着嫉妒、控制欲或过度的情感依赖。这种关系可能表现为长期的比较、暗中拆台，或者一方过度索取而另一方感到窒息。它更像是一场没有硝烟的战争。</p>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-icon">🔄</span>
+                        <h3>转变：从假到真</h3>
+                        <p>家庭关系并非一成不变。许多“假姐妹”在经历了成年后的独立、价值观的成熟以及适当的距离感后，能够转化为“真姐妹”。这需要双方的努力和时间的沉淀。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Stories -->
+        <section id="stories" class="stories">
+            <div class="container">
+                <h2 class="section-title">真实案例分享</h2>
+                <p class="section-desc">每一个故事背后，都是一种挣扎与觉醒。这些经历或许能让你在相似的场景中找到共鸣。</p>
+
+                <div class="story-list">
+                    <article class="story-item">
+                        <span class="story-number">01</span>
+                        <div class="story-content">
+                            <h3>“永远拿不到满分”的妹妹</h3>
+                            <p>叙述者分享了自己从小被拿来与“完美”的妹妹比较的经历。长大后，她发现妹妹的自信其实源于长期的打压。通过心理咨询，她终于意识到，妹妹的攻击性是对她自身不安全感的投射。</p>
+                            <div class="story-meta">分类：原生家庭创伤 &bull; 阅读时长：3分钟</div>
+                        </div>
+                    </article>
+
+                    <article class="story-item">
+                        <span class="story-number">02</span>
+                        <div class="story-content">
+                            <h3>断联三年后的和解</h3>
+                            <p>因为母亲去世后房产继承问题，姐妹俩反目成仇。在断联三年后，叙述者决定尝试一次晚餐。这次和解并非因为问题解决了，而是双方都学会了尊重彼此的界限，不再试图控制对方。</p>
+                            <div class="story-meta">分类：成年独立 &bull; 阅读时长：4分钟</div>
+                        </div>
+                    </article>
+
+                    <article class="story-item">
+                        <span class="story-number">03</span>
+                        <div class="story-content">
+                            <h3>情感吸血鬼</h3>
+                            <p>一个关于如何识别并拒绝“假姐妹”情感索取的案例。叙述者学会了设立心理边界，不再做对方的情绪垃圾桶，反而赢得了对方的尊重。</p>
+                            <div class="story-meta">分类：心理边界 &bull; 阅读时长：2分钟</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnosis Section -->
+        <section id="diagnosis" class="diagnosis">
+            <div class="container">
+                <div class="diagnosis-wrapper">
+                    <div class="diagnosis-text">
+                        <h2>如何判断你们的关系是“真”是“假”？</h2>
+                        <p>真实的姐妹关系是滋养性的，而虚假的关系往往是消耗性的。以下是一些关键信号：</p>
+                        
+                        <ul class="diagnosis-list">
+                            <li>
+                                <strong>1.</strong>
+                                <span>沟通模式：真姐妹愿意倾听你的抱怨而不急于评判；假姐妹则往往急于反驳或转移话题。</span>
+                            </li>
+                            <li>
+                                <strong>2.</strong>
+                                <span>比较心态：真姐妹为你感到高兴；假姐妹总是习惯性地比较谁过得更好，甚至暗中较劲。</span>
+                            </li>
+                            <li>
+                                <strong>3.</strong>
+                                <span>支持意愿：当你遇到困难时，真姐妹会伸出援手；假姐妹可能会因为嫉妒而保持沉默或落井下石。</span>
+                            </li>
+                            <li>
+                                <strong>4.</strong>
+                                <span>边界感：真姐妹懂得尊重你的隐私和个人空间；假姐妹则可能打着“关心”的旗号过度干涉。</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="cta-btn">开始自我诊断</a>
+                    </div>
+                    <div class="diagnosis-image">
+                        <!-- Placeholder for a conceptual image -->
+                        <img src="https://picsum.photos/seed/sisters/600/400" alt="Two sisters talking together" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <p class="section-desc">关于真假姐妹关系，你还有哪些疑问？</p>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如果是“假姐妹”，我应该断绝关系吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            断绝关系是一个极端的选择，通常在关系极度恶劣或涉及虐待时才考虑。更常见且有效的做法是<strong>“心理断联”</strong>。即保持表面的礼貌，但不再在情感上依赖她，不向她透露私事，不再期待她的理解。这是一种保护自己的策略。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            父母偏心会让姐妹变成假姐妹吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            父母的偏心往往是造成姐妹竞争和情感疏离的根源。当一方长期感到被忽视，而另一方享受特权时，怨恨会滋生。虽然父母无法改变，但姐妹双方可以通过意识到这一点来打破“受害者与加害者”的循环，从而重建关系。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            姐妹之间应该分享所有事情吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            并非所有事情都需要分享。建立<strong>心理边界</strong>是健康关系的基石。保留一些私人空间，特别是关于工作、财务和未来规划，有助于维持关系的神秘感和独立性，避免因过度曝光而导致的摩擦。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            年纪大了，姐妹关系会变好吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            俗话说“老来伴”，随着年龄增长，人们往往更看重亲情而非利益，关系确实有改善的可能。但这需要双方都放下过往的恩怨，用更宽容的心态去看待彼此的不足。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>真假姐妹指南</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.6;">
+                        致力于为每一个在家庭关系迷宫中探索的个体提供支持与指引。我们相信，理解是改变的第一步。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#concepts">核心概念</a></li>
+                        <li><a href="#stories">真实故事</a></li>
+                        <li><a href="#diagnosis">识别特征</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源推荐</h4>
+                    <ul>
+                        <li><a href="#">家庭关系心理学书籍</a></li>
+                        <li><a href="#">在线心理咨询预约</a></li>
+                        <li><a href="#">互助社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 真假姐妹指南. All rights reserved. 本站内容仅供参考，不构成医疗或心理治疗建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
