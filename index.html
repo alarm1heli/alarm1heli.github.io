@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全彩漫画 日本漫画 - 本站提供海量正版日本漫画在线阅读，包含热血少年、浪漫恋爱、悬疑推理、异世界冒险等热门题材，高清无水印，更新及时。">
+    <meta name="keywords" content="全彩漫画,日本漫画,在线阅读,动漫,日漫,漫画推荐">
+    <title>全彩漫画 日本漫画 - 高清正版日漫在线阅读与推荐平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #dfe4ea;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 280px;
+            border-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2f3542 0%, #57606f 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--card-bg);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            background: #f1f2f6;
+            color: var(--text-light);
+            transition: all 0.2s;
+        }
+
+        .tag:hover, .tag.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .sort-select {
+            padding: 6px 12px;
+            border: 1px solid #dfe4ea;
+            border-radius: 6px;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        /* Grid Layout */
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .manga-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #dfe4ea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .rating {
+            color: var(--accent-color);
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #dfe4ea;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .view-more {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .view-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Ranking List */
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ranking-item {
+            display: flex;
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            align-items: center;
+        }
+
+        .rank-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: #dfe4ea;
+            width: 40px;
+            text-align: center;
+        }
+
+        .rank-num.top-1 { color: #ffd700; }
+        .rank-num.top-2 { color: #c0c0c0; }
+        .rank-num.top-3 { color: #cd7f32; }
+
+        .rank-cover {
+            width: 60px;
+            height: 80px;
+            border-radius: 4px;
+            object-fit: cover;
+            margin-right: 16px;
+        }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .rank-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: #a4b0be;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                height: auto;
+                padding: 12px 0;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .search-box input:focus {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .manga-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                漫库 <span>MangaHub</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">连载中</a></li>
+                    <li><a href="#">完结作品</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">我的书架</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索全彩漫画、日漫作品...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>探索全彩日本漫画的精彩世界</h1>
+                <p>汇聚海量高清正版日本漫画资源，包含热血少年、浪漫恋爱、悬疑推理、异世界冒险等热门题材，为您带来极致的视觉阅读体验。</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Filter & Sort -->
+            <div class="filter-bar">
+                <div class="filter-tags">
+                    <span class="tag active">全部</span>
+                    <span class="tag">热血战斗</span>
+                    <span class="tag">恋爱喜剧</span>
+                    <span class="tag">悬疑推理</span>
+                    <span class="tag">异世界</span>
+                    <span class="tag">职场</span>
+                    <span class="tag">运动</span>
+                </div>
+                <div class="sort-box">
+                    <select class="sort-select">
+                        <option>最新更新</option>
+                        <option>阅读最多</option>
+                        <option>评分最高</option>
+                        <option>开始时间</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Latest Updates Grid -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">最新连载</h2>
+                    <a href="#" class="view-more">查看更多 ></a>
+                </div>
+                <div class="manga-grid">
+                    <!-- Card 1 -->
+                    <article class="manga-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/manga1/300/450" alt="漫画封面">
+                            <span class="badge-new">NEW</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">龙之谷：觉醒</h3>
+                            <div class="card-meta">
+                                <span>更新至 245话</span>
+                                <span class="rating">★ 9.2</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="manga-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/manga2/300/450" alt="漫画封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">樱花之恋物语</h3>
+                            <div class="card-meta">
+                                <span>更新至 89话</span>
+                                <span class="rating">★ 8.8</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="manga-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/manga3/300/450" alt="漫画封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">暗影侦探笔记</h3>
+                            <div class="card-meta">
+                                <span>更新至 102话</span>
+                                <span class="rating">★ 9.0</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="manga-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/manga4/300/450" alt="漫画封面">
+                            <span class="badge-new">HOT</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">无限回廊</h3>
+                            <div class="card-meta">
+                                <span>更新至 56话</span>
+                                <span class="rating">★ 9.5</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="manga-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/manga5/300/450" alt="漫画封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">咖啡厅的午后</h3>
+                            <div class="card-meta">
+                                <span>更新至 12话</span>
+                                <span class="rating">★ 8.5</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="manga-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/manga6/300/450" alt="漫画封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">钢铁战士</h3>
+                            <div class="card-meta">
+                                <span>更新至 340话</span>
+                                <span class="rating">★ 9.1</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Ranking Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">人气榜单</h2>
+                    <a href="#" class="view-more">查看更多 ></a>
+                </div>
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <span class="rank-num top-1">1</span>
+                        <img src="https://picsum.photos/seed/rank1/120/160" alt="封面" class="rank-cover">
+                        <div class="rank-info">
+                            <h3 class="rank-title">魔王转生：异界争霸</h3>
+                            <p class="rank-desc">转生到异世界的魔王，为了重返故乡，必须在这个世界建立属于自己的势力，并面对各路英雄的挑战。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num top-2">2</span>
+                        <img src="https://picsum.photos/seed/rank2/120/160" alt="封面" class="rank-cover">
+                        <div class="rank-info">
+                            <h3 class="rank-title">校园侦探风云</h3>
+                            <p class="rank-desc">看似平凡的转学生，实则是拥有惊人推理能力的侦探，在校园中解决各种离奇案件。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num top-3">3</span>
+                        <img src="https://picsum.photos/seed/rank3/120/160" alt="封面" class="rank-cover">
+                        <div class="rank-info">
+                            <h3 class="rank-title">时空旅人的日记</h3>
+                            <p class="rank-desc">拥有穿越时空能力的主角，穿梭于过去与未来，试图改变那些遗憾的瞬间。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num">4</span>
+                        <img src="https://picsum.photos/seed/rank4/120/160" alt="封面" class="rank-cover">
+                        <div class="rank-info">
+                            <h3 class="rank-title">深海之蓝</h3>
+                            <p class="rank-desc">关于海洋、勇气与成长的治愈系故事，描绘了少年与海洋生物之间的奇妙羁绊。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num">5</span>
+                        <img src="https://picsum.photos/seed/rank5/120/160" alt="封面" class="rank-cover">
+                        <div class="rank-info">
+                            <h3 class="rank-title">机械之心</h3>
+                            <p class="rank-desc">在赛博朋克的世界里，拥有人类情感的机器人如何寻找自我存在的意义。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于漫库</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">热血少年</a></li>
+                        <li><a href="#">异世界冒险</a></li>
+                        <li><a href="#">恋爱喜剧</a></li>
+                        <li><a href="#">悬疑推理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>阅读指南</h4>
+                    <ul>
+                        <li><a href="#">如何阅读</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">QQ粉丝群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 全彩漫画 日本漫画在线阅读平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
